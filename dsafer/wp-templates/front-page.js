@@ -15,12 +15,12 @@ export default function Component() {
   const { data } = useQuery(Component.query, {
     variables: Component.variables(),
   });
-
+  const { data: newQueryData } = useQuery(NEW_QUERY);
   const { title: siteTitle, description: siteDescription } =
     data?.generalSettings;
   const primaryMenu = data?.headerMenuItems?.nodes ?? [];
   const footerMenu = data?.footerMenuItems?.nodes ?? [];
-
+  const heroData = newQueryData?.page?.home?.hero ?? {};
   return (
     <>
       <SEO title={siteTitle} description={siteDescription} />
@@ -31,10 +31,11 @@ export default function Component() {
       />
       <Main>
         <Container>
-          <Hero title={'Front Page'} />
+        <div className="clouds position-absolute"><img className="img-fluid" src="https://cms.dsafer.com/wp-content/themes/dsafer/src/templates/home/svg/clouds.svg" alt="clouds"/></div>
+      <div className="tubes position-absolute"><img className="img-fluid" src="https://cms.dsafer.com/wp-content/themes/dsafer/src/templates/home/svg/tubes.svg" alt="tubes"/></div>
           <div className="text-center">
-            <p>Dev</p>
-            <code>wp-templates/front-page.js</code>
+            <div className='hero'>{heroData.title}</div>
+            <p>{heroData.subtitle}</p>
           </div>
         </Container>
       </Main>
@@ -72,3 +73,32 @@ Component.variables = () => {
     footerLocation: MENUS.FOOTER_LOCATION,
   };
 };
+const NEW_QUERY = gql`
+  query {
+    page(id: "9", idType: DATABASE_ID) {
+      home {
+        hero {
+          subtitle
+          title
+          animation {
+            left {
+              node {
+                link
+              }
+            }
+            right {
+              node {
+                link
+              }
+            }
+            scroll {
+              node {
+                link
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
