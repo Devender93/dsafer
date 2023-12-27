@@ -31,14 +31,21 @@ export default function Component() {
         menuItems={primaryMenu}
       />
       <Main>
-        <Container>
-        <div className="clouds position-absolute"><img className="img-fluid" src="https://cms.dsafer.com/wp-content/themes/dsafer/src/templates/home/svg/clouds.svg" alt="clouds"/></div>
-      <div className="tubes position-absolute"><img className="img-fluid" src="https://cms.dsafer.com/wp-content/themes/dsafer/src/templates/home/svg/tubes.svg" alt="tubes"/></div>
-          <div className="text-center">
-            <div className='hero'>{heroData.title}</div>
-            <p>{heroData.subtitle}test</p> 
-          </div>
-        </Container>
+        <div className="home-banner">
+          <div className="clouds position-absolute"><img className="img-fluid" src="https://cms.dsafer.com/wp-content/themes/dsafer/src/templates/home/svg/clouds.svg" alt="clouds"/></div>
+          <div className="tubes position-absolute"><img className="img-fluid" src="https://cms.dsafer.com/wp-content/themes/dsafer/src/templates/home/svg/tubes.svg" alt="tubes"/></div>
+          <Container>
+              <div className="text-center">
+                <h1 className='hero'>{heroData.title}</h1>
+                <p>{heroData.subtitle}</p> 
+              </div>
+          </Container>
+          <Container>
+            <div className="hero-main-img">
+              <img src="https://cms.dsafer.com/wp-content/uploads/2023/08/Hero-Section-Pages-Graphic.png.webp" alt="Hero Image"/>
+            </div>
+          </Container>
+      </div>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />
     </>

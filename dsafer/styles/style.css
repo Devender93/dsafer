@@ -1,3 +1,39 @@
-body{
-    background-color: aqua;
+.home-banner {
+    background: linear-gradient(#114342,#1f5853 9.38%,#2f7167 27.72%,#3e887a 46.83%,#3c8678 49.85%,#25625b 76.68%,#093637);
+    min-height: 100vh;
+    padding-bottom: 0;
+    position: relative;
+}
+.position-absolute {
+    position: absolute;
+}
+.clouds.position-absolute {
+    top: 0;
+}
+.tubes.position-absolute {
+    bottom: 0;
+    width: 100%;
+}
+.home-banner .Container_component__V9ZBu {
+    padding: 45px;
+    position: relative;
+    z-index: 1;
+}
+h1.hero {
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    padding-top: 100px;
+    margin-bottom: 1.5rem;
+}
+.home-banner .text-center {
+    width: 50%;
+    margin: 0 auto;
+}
+.home-banner p {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.4;
+    padding: 0 3rem;
 }
