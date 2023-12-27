@@ -35,7 +35,7 @@ export default function Component() {
       <div className="tubes position-absolute"><img className="img-fluid" src="https://cms.dsafer.com/wp-content/themes/dsafer/src/templates/home/svg/tubes.svg" alt="tubes"/></div>
           <div className="text-center">
             <div className='hero'>{heroData.title}</div>
-            <p>{heroData.subtitle}</p>
+            <p>{heroData.subtitle}test</p> 
           </div>
         </Container>
       </Main>
