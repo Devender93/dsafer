@@ -11,6 +11,7 @@ import {
   SEO,
 } from '../components';
 
+
 export default function Component() {
   const { data } = useQuery(Component.query, {
     variables: Component.variables(),
